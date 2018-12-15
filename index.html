@@ -42,7 +42,8 @@
                         <div class="row">
                             <div class="col-md-6 col-md-offset-3">
                                 <div class="form-group">
-                                    <select id="countries" name="countries" class="form-control" data-bind="options: availableCountries, selectedOptions: chosenCountries"
+                                    <label>Jaki jest twój ulubiony kolor?</label>
+                                    <select id="colors" name="colors" class="form-control" data-bind="options: availableColors, selectedOptions: chosenColors"
                                         data-val="true" data-val-required="select a country" size="5" multiple="true"></select>
                                 </div>
                                 <div class="form-group">
@@ -71,13 +72,14 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6 col-md-offset-3">
-                                <label>Countries</label> : <span data-bind="text: chosenCountries"></span>
+                                <label>Kolor</label> : <span data-bind="text: chosenColors"></span>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 col-md-offset-3">
                                 <div class="form-group">
-                                     <input id="additional" name="additional" type="text" class="form-control" placeholder="Additional Details"  data-val="true" data-val-required="name is required">    
+                                    <label>Czy umiesz pływać?</label>
+                                    <input id="canSwim" name="canSwim" type="checkbox">
                                 </div>
                             </div>
                         </div>
@@ -115,8 +117,8 @@
             self.availableTypes = ko.observableArray(['New', 'Open', 'Closed']);
             self.chosenType = ko.observable('');
 
-            self.availableCountries = ko.observableArray(['France', 'Germany', 'Spain', 'United States', 'Mexico']),
-            self.chosenCountries = ko.observableArray([]) // Initially, only Germany is selected
+            self.availableColors = ko.observableArray(['biały', 'czerwony', 'niebieski', 'zielony', 'żółty', 'czarny']),
+            self.chosenColors = ko.observableArray([]) // Initially, only Germany is selected
         }
 
         var viewModel = new ViewModel();
