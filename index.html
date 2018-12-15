@@ -32,6 +32,11 @@
                                     <!--data-val="true" data-val-required="name is required"-->
                                 </div>
                                 <div class="form-group">
+                                    <select id="gender" name="gender" class="form-control" data-bind="options: Gender, selectedOptions: chosenGender, optionsCaption: 'Wybierz płeć'"
+                                            data-val="true" data-val-required="Request gender is required.">
+                                    </select>
+                                </div>
+                                <div class="form-group">
                                     <input id="email" name="email" type="text" class="form-control" placeholder="Email" data-bind="value: Email" data-val="true"
                                         data-val-required="email is required">
                                     <!-- data-val="true" data-val-required="email is required -->
@@ -67,6 +72,11 @@
                         <div class="row">
                             <div class="col-md-6 col-md-offset-3">
                                 <label>Email</label> : <span data-bind="text: Email"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3">
+                                <label>Płeć</label> : <span data-bind="text: Gender"></span>
                             </div>
                         </div>
                         <div class="row">
@@ -119,6 +129,8 @@
             var self = this;
 
             self.Name = ko.observable('');
+            self.Gender = ko.observableArray(['Kobieta', 'Mężczyzna']);
+            self.chosenGender = ko.observable('');
             self.Email = ko.observable('');
             self.Details = ko.observable('');
 
