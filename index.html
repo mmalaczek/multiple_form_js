@@ -14,11 +14,8 @@
 </head>
 
 <body>
-
     <div id="wrapper">
-
         <div id="container body-content">
-
             <div class="progress">
                 <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
                     <span class="sr-only">0% Complete</span>
@@ -27,11 +24,10 @@
             <form class="form-horizontal msf">
                 <div class="msf-content">
                     <div class="msf-view">
-
                         <div class="row">
                             <div class="col-md-6 col-md-offset-3">
                                 <div class="form-group">
-                                    <input id="name" name="name" type="text" class="form-control" placeholder="Name" data-bind="value: Name" data-val="true"
+                                    <input id="name" name="name" type="text" class="form-control" placeholder="Twoje imię" data-bind="value: Name" data-val="true"
                                         data-val-required="name is required">
                                     <!--data-val="true" data-val-required="name is required"-->
                                 </div>
@@ -46,8 +42,6 @@
 
                             </div>
                         </div>
-
-
                     </div>
                     <div class="msf-view">
                         <div class="row">
@@ -56,9 +50,7 @@
                                     <select id="countries" name="countries" class="form-control" data-bind="options: availableCountries, selectedOptions: chosenCountries"
                                         data-val="true" data-val-required="select a country" size="5" multiple="true"></select>
                                 </div>
-
                                 <div class="form-group">
-
                                     <select id="type" name="type" class="form-control" data-bind="options: availableTypes, selectedOptions: chosenType, optionsCaption: 'Choose Request Type'"
                                         data-val="true" data-val-required="Request type is required.">
                   </select>
@@ -100,37 +92,23 @@
                                 </div>
                             </div>
                         </div>
-                        
-
-
                     </div>
                 </div>
-
-                
-
                 <div class="msf-navigation">
                     <div class="row">
                         <div class="col-md-3 col-md-offset-6">
                             <button type="button" data-type="next" class="btn btn-default msf-nav-button">Next <i class="fa fa-chevron-right"></i></button>
-
                             <button type="submit" data-type="submit" class="btn btn-primary msf-nav-button">Submit</button>
                         </div>
-
                     </div>
                 </div>
             </form>
 
         </div>
     </div>
-
-
-
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
-
     <script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
     <script type="text/javascript"   src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
     <script type="text/javascript"  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
@@ -150,8 +128,6 @@
 
             self.availableCountries = ko.observableArray(['France', 'Germany', 'Spain', 'United States', 'Mexico']),
             self.chosenCountries = ko.observableArray([]) // Initially, only Germany is selected
-
-
         }
 
         var viewModel = new ViewModel();
