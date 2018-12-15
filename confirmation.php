@@ -1,6 +1,9 @@
 <?php
 
 $post = $_POST;
+if (!$post) {
+    header('Location: index.html');
+}
 
 $color = 'silver';
 
@@ -19,6 +22,16 @@ $color = 'silver';
     <div>
         Płeć: <?php echo $post['gender'] ?>
     </div>
+    <?php if (isset($post['age'])): ?>
+        <div>
+            Wiek: <?php echo $post['age'] ?>
+        </div>
+    <?php endif ?>
+    <?php if (isset($post['colors'])): ?>
+        <div>
+            Kolor: <?php echo $post['colors'] ?>
+        </div>
+    <?php endif ?>
     <div>
         Czy umiesz pływać? <?php echo (isset($post['canSwim']) ? 'Tak' : 'Nie') ?>
     </div>
