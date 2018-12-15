@@ -42,7 +42,8 @@
                                         data-val="true" data-val-required="select a color" size="6" multiple="true"></select>
                                 </div>
                                 <div class="form-group">
-
+                                    <input id="age" name="age" type="text" maxlength="2" class="form-control" placeholder="Twój wiek" data-val="true" data-bind="value: Age"
+                                           data-val-required="age is required">
                                 </div>
                             </div>
                         </div>
@@ -106,8 +107,9 @@
             self.Gender = ko.observableArray(['Kobieta', 'Mężczyzna']);
             self.chosenGender = ko.observable('');
 
-            self.availableColors = ko.observableArray(['biały', 'czerwony', 'niebieski', 'zielony', 'żółty', 'czarny']),
+            self.availableColors = ko.observableArray(['biały', 'czerwony', 'niebieski', 'zielony', 'żółty', 'czarny']);
             self.chosenColors = ko.observableArray([]);
+            self.Age = ko.observable('');
         }
 
         var viewModel = new ViewModel();
