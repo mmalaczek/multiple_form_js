@@ -5,17 +5,28 @@ if (!$post) {
     header('Location: index.html');
 }
 
-$color = 'silver';
+const _MAN = 'Mężczyzna';
+const _WOMAN = 'Kobieta';
+
+$color = '#fff';
+
+switch ($post['gender']) {
+    case _MAN:
+        $color = (isset($post['canSwim']) ? 'green' : 'blue');
+        break;
+    case _WOMAN:
+        $color = (isset($post['canSwim']) ? 'white' : 'yellow');
+        break;
+}
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
-<body>
-<div style="background: <?php echo $color ?>">
+<body style="background: <?php echo $color ?>">
+<div id="wrapper">
     <div>
         Imię: <?php echo $post['name'] ?>
     </div>
@@ -34,6 +45,9 @@ $color = 'silver';
     <?php endif ?>
     <div>
         Czy umiesz pływać? <?php echo (isset($post['canSwim']) ? 'Tak' : 'Nie') ?>
+    </div>
+    <div>
+        <a href="index.html">Powrót</a>
     </div>
 </div>
 </body>
