@@ -39,7 +39,7 @@
                                 <div class="form-group" id="colors-container">
                                     <label>Jaki jest twój ulubiony kolor?</label>
                                     <select id="colors" name="colors" class="form-control" data-bind="options: availableColors, selectedOptions: chosenColors"
-                                        data-val="true" data-val-required="select a color" size="6" multiple="true"></select>
+                                        data-val="true" data-val-required="select a color" size="6" multiple="true" data-rule-oneorallchecked="true" data-msg-oneorallchecked="Check one or all!"></select>
                                 </div>
                                 <div class="form-group" id="age-container">
                                     <input id="age" name="age" type="number" maxlength="3" class="form-control" placeholder="Twój wiek" data-val="true" data-bind="value: Age"  min="1" max="100"
@@ -80,6 +80,8 @@
         crossorigin="anonymous"></script>
     <script type="text/javascript"  src="src/multi-step-form.js"></script>
     <script type="text/javascript">
+        var colors = ['biały', 'czerwony', 'niebieski', 'zielony', 'żółty', 'czarny'];
+
         function ViewModel() {
             var self = this;
 
@@ -87,7 +89,7 @@
             self.Gender = ko.observableArray(['Kobieta', 'Mężczyzna']);
             self.chosenGender = ko.observable('');
 
-            self.availableColors = ko.observableArray(['biały', 'czerwony', 'niebieski', 'zielony', 'żółty', 'czarny']);
+            self.availableColors = ko.observableArray(colors);
             self.chosenColors = ko.observableArray([]);
             self.Age = ko.observable('');
         }
@@ -109,6 +111,10 @@
                 var gender = $('#gender').val();
                 if (gender === 'Kobieta') {
                     $('#age-container').remove();
+
+                    $.validator.addMethod("oneorallchecked", function(value, element) {
+                        return value.length === 1 || value.length === colors.length;
+                    }, "Musi być wybrany 1 element lub wszytskie");
                 }
                 if (gender === 'Mężczyzna') {
                     $('#colors-container').remove();
