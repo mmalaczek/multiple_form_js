@@ -26,7 +26,7 @@ switch ($post['gender']) {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body style="background: <?php echo $color ?>">
-<div id="wrapper">
+<div id="wrapper" style="text-align:center;margin-top: 20px">
     <div>
         Imię: <?php echo $post['name'] ?>
     </div>
