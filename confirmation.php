@@ -40,7 +40,7 @@ switch ($post['gender']) {
     <?php endif ?>
     <?php if (isset($post['colors'])): ?>
         <div>
-            Kolor: <?php echo $post['colors'] ?>
+            Kolor: <?php echo implode(",", $post['colors']) ?>
         </div>
     <?php endif ?>
     <div>
